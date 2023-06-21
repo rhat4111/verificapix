@@ -1,0 +1,510 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/index.css" />
+</head>
+
+<body>
+  <header class="w-full h-24 bg-black fixed top-0 z-50 flex justify-center">
+    <div class="flex items-center justify-between w-full max-w-7xl md:px-8 px-4">
+      <div class="logo">
+        <svg 
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          width="276px" height="59px">
+          <image  x="0px" y="0px" width="276px" height="59px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAARQAAAA7CAYAAAC6/XUuAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAAB3RJTUUH5QcVDyEaJRvwiAAAKABJREFUeNrtnXv8bGPZ/9+fzd61yakQUTNC6gmpFDnkNFPOp5lOKEQKTweFRwcPD4qeiopUfs6qB62JnbOZNpKKEooo1EzZITtnzy6b/fn9cd9rZs36rvl+5/u1te2n+bxee39nrXWf17qv+7qu+7quW4wwwgiLHcqtxrLGT3Yq9QVDpp9u+1xJddu/B97bqdZ/s7DbpUU9MCOMMMJwKLcauxkfKLSZ7ZnAfOBG4CxJ57QrtWfHybun7e9IwjaIBzCbdqr1PyzMNk5b1IM0wggjjI9SM1m23GpcZPsHmKrxTABJ04HNJJ0B/LjUSl4+qAzj5bvEBBCsIunqcqux8sJs64igjDDCCxilZrK8pKbxrpKCTGGibOFs0k2Aq8qtxnJF5Qh93/acnkwigDVtX1VuJcuxkDAiKCOM8AJFudVYCbje+K0ichcGSYTr8BtIOY83AJeUW42l8mW1K7W/AtthHs2kB9gAmFVqJi9eGG0e6VAWMkrNZIZEyWZpSU8C97YrNT/ngkf4l0KpmawOzJa0tjEpQZG0APg6MBt4i/GhmJkIFNkXm8sRu3Uq9afz5ZZbjU2MW5iZ6b1IlC4G6uPpYYbBiKAsBJSayfLAR4DdgTdLmhZfPsAW7Urtx4u6jSMsPii3krVsWoiS4hSNRGW+7Xd3qvWLe2kbexufHTgXgK6e5AKJPduV+hgCUWom20u6GJje5VQCLToD+FCnWp/yArjkoh68FxLKrcYatpfryqlwX6danztenlIz2R44V9LLILz49CVFojKtoJ5XAS/NpHmgXak9sKj7vzii3GqsYrxKZgV/uF2p/WlRt2uqKDWT9UBXSKwGpDsyCObZ3q1TrV/Vn8P/gzm7e0VYyGy/B/RYqZl8JE8gOtX65eVWY3/b50BGbML7Sfor8Jmptn+kQ+nHjyTdgrkFuEXSZ8dLXG41dgQuAQIxyci44/F+ts8FbgHfIukW2ycs6o4vvvAJwC22b4l/z13ULZoqSs3kzRKzbfeICSD0OLDdWGICoNW7I2HA6SIFwAGILxbV1a7UzgU+GdNldSqfLrcah0y1DyOCkoHtaZmBBTyQLEQx50zUG0OJlJDcJ3QFMMv2ffm8ve07da9HmBrCAr74j1+pmWwCzAatGPrVFUXm2n5Hu1K/riDPUrbPSK/T7yh8X5GwoMNKreTTRXV2qvWTDMf3f/MAnFhuNT4wlX6MRJ4c+rXmGi/dfuCVhHB3+05/EezbrtSuHq+O3gtM6xjpbKeKLDEOvxe/sSy3GlvbvlTSzFRkif140KZaZNFabiVL2VwKbJnqTiIeAa+QXsRv7QvlVuPRdqX2zTHjB581rAzsly508e8ZpWYyt1OtXz6Zvow4lAyiBj3LMg6E7d26LzH8edr4nRMRk15l4T/bePGbAy8YpMQ8nYSL21iWW8nOxlcCM9PdnNiPOTabFRGTUjNZznANYisIXFoch/mStrY5LU2bWSBPKTWTPfJltSt1Ax+WdFE6llFvsySQlFuNTSbTnxFBycB4F2ArSVuBtjL+clG6UiuRpA2gy1Zi+6JOpX77kFV9RKH8rYCtgKMXdd8XVwgdbYdxtNlK0kcWdZuGRTCHJxGaDkSmxAD3SmzcqdbvyecpNZOVJM3GvDVlxiSljNn+7UrtVuAg4IJc1mmSzi41k53yZXaq9WeBPYSuk4TiFrTETNuXlVuN9Ybt0+IvfC4CRP3JI31Wi+aQTrX+1UXdthEWD5SayQGSvmm7b1GXdDtQLdr1K7carwBfBVo33f2JhGQB8IFOtf7dTPkzJF0EbG/c/U6F5hlv36nUry0ofznb10raoE+vIuYIbdau1NoT9WuREpRoBPYGm7UlrWj7GUkPAre1K7V7nnMFYwdseWBl23M71frDU253KykB7Zy4vl+nWj/znzRuS0paF7yOzcskLQnMBe6JY/ePKZS5lKTX2y4DyyOWxjwJ3A/8plOtPy9bsbbXADYEViFMjPuBWyUtVKe1FxJKzeQQ4ETIKugBcROwY6dSfyifp9xqrG58LWZNKe7oBAIx3/YenWo9KahnKUlX2t481BUqAR4Hb9Ou1H9ZUM/KwE+BNYGsTuUeSZu0K7UxbctCpWbye0kzQl4/IHF2u1L/9mQHqdxqHGB7X8QqQrJ9b6da36ZwQFvJhphDJO1ie2nSfvabEt8NfAP4Vqda/0dBfWfb3jLzQhYg/iJ0SrtSO7+XLlnC5kOSDjJeLxKBmzvV+obx+ddBO6d6E8OzmJ9K+nS7UuvboSk1k5skrQy8BPyyPiIungLNTV9CfNnXtSu1vWPe44C9MkrEBcAvbH+mU63fO+QYb2b7YGBHSS/JPuu+ePwPoauAb7UrtSsmKjPa0Xw0iHm8CDJ6icz/wN3A6cDJ7Upt3qDybB8D5HcI7gfOkfStmGYJ4P3AYcC/DSjqdsKkO1fSs7k69gQ+n0v/O+AoST8vaNOLYnnTM7f/ALxD0jMTjZHtswiiaRa7Srp1mPeWRbnVONL2MVkFaMT1wE7tSu2xgne0FnANsHou3zzb7+1U6z8cp77lCFa1b4p9IRKkuRJbtCv13xbU92pJNxivkt03kHQzsHW7Unt8UH0qtRKnEzlljSTt0q7UBjayoNE7E7ZIyXS4067Uyn0NbSXLYE6WtHf3ZeHQXvdr7DNtuR28e7tSvzvX6WsRW/S2DJ0RQVm3U63fUWolK2EuAjYNve0+v61TrW8Qy7lYYpd8/UDH9nqdav2JTJ2PAstBbmVJB7NfSw5wXada3zKO0dm29w7pQmNiHx+UtN54lL/carzK9reA7VIT666NQnxvGWVetv4rJL1vwEe6hKRz4uTsKyv3EdH7EMNKBezaqdbvKGqr7bOBvSnGm4D7gO8DWwz5ef0UqEu6P1PHJ4CTCtI+DWws6ZaCdn0JODR3+zOSjh+vcts7A7Nyt1sEYjS0CrjUSgScgDk8byZg+2pJu7Urtf8teE/rAVdKekXfO7fnATt2qvXZE9Wd+gQB68T60kdzEJt1KvV2Qb3rS7oeWDbNE7+P2YLt2gVm/QDTgvJFXeVi/P25YQcqVnZk2O4iT3WzDVwdc2NKTNy1woGs5BV2PXofte11QT8ttxprZcvLKKLSO/E+SNqw3GrMFGoiNg2Kpl76sVuNyrXZ2C4h9hpTZ6a5XQVWz9JwoBDZZ+JMb7yBlwP7DRrbUit5O3ArsF1+cnfLNd3doixRk7Sd7YvLrcaYVkn6ELBnHxHvtSn8Vc/yN1PuWpKaU3R7fwthMg5LTCB40V6fGntNgBkErqcIRxJEwiyOsr3OoMJsL0vgkrN4CjhgUsSkmQhzKnB4dqzjv1mInQYQkzdKmg28Ir0Xd7MeB7YehpgAtCu1h2xXbP85W46k1TCtUjNZJZ+nU63/GtgRPK9XL2C2tvleqZksUVTXNOMn+7aLAt5SaiXrDjlY6wIbpoQhszp22aJSK1kWuBp4XbYem4cIhjXbSLzG9vqELaw7U4/KiBVtX1RuNWZ0Xwh+EHjMeH4fEQqTVbaPB7+hN9nctWB1pqPGf7X9mO2n4/TJyqdrZ/tq3CCsVjekE61rQCT9DpiFmQXMkjRLUivzAh+S9BjQJ75FItxXT4pyK9kUc6UzdgVdfsz+g6RvAIcjPgqchLgrTWQ7NcPe0vamBcVv1x23lB7CWbZ3J4ghaxI4u8MlzaFXL7ZXNf48xfgrMKafEYcB62eu/w5cBvw3cALwA8KEzWNN4IIoKgE8GusoEr0Kx1LS34EP0r8MvQg43R5owHgcsHru3mck/ZEhUW41lgDOk/QR0c/ZSvqepNoAJ76NgGttr5gu1BFzQdt0qvWfD9sGgE61fl/YUvZDuYVpTaAZNxr60K7UrgfeY3tBlhuXqEn6ZlE9io3/d9sn91fEV9qV+qFMgHKrkWEljeFZoU3bldqNmTTn2M7L1d+X9KEB7Ph0SacB++Q68ql2pX5iX9pWsiLmPkkvytw+1vZnJC0RWZ2ngLOAHxk/hHk0z7KXW8myoLbtFTJOVl/rVOufKGhfGfHHrOMWZt9OtX72EOM1E7jb9mqZVf+cdqW2T66OlRC/Flol8/JTkeNTg+TmcqvxHvB3bZbIiEMHtiu1b+XKv1bSFhkx6eR2pfaxojJLzeRlkn7WJXxBHJonaZVB8rTtFwO/BdYYMBRnA0dEJXw237LA8YStzzwOlnRqJu00oAlsnUlzW7qlP6BdpwAH524flJ8gtjcCfkY/z/kTYIvUXmkilFrJDMwFknbt6aW67/xbtg/uVMeGcCw1k62BHyKW7n5jIc+DtqvPJXRjqZmsD1wvsWy/DlA32t66U60XcUr7IM4qsMM8tlOt/2c2bbpl9W3gwayRkM1ekboORLnVWML2Xr1JLzCX54jJRikxybDXP5D03iJiAtCp1ucD+xvfnOkwoE/mWa1OpT5X0t9z+oy9gCUiB/EjYO12pfbRdqV2cadSv6FI/m9X6o8Dj6ci0HjiS2rI2OV8xohMgxEVmnOzZReYPiPpeEyeFb0WePN4Srh2pXYB6JIMi5pO7jwWdN8ZYDxQMdyp1v9mfHhXvAuerTPBWw7KEzmCQTtDx0raN09MYr7HJR1MsYPaEbaXzKRdAPyZyeEIoJ2790Xbr8y8j+kEBXT2pf4D2H8SxGQ6kEjatevj1Svuy8BBA4jJDsClkpbufmNhXs6xvdlzjQPbqdZ/LbGtYV5O3N1I0g+zUkAmz9mYw7pqA6V6QI4sNZO+RWgaQLtSmw+cl3YgvqyX237nBO2rSnEF7RGjs7IJbH8yHcdY9lPAR9qV2rgvpl2pPYs5JpTZHdjVEBsPzhVFKbxGFG+ukbR9u1K7nyHQFQF6RQ2uRV05NNu34dETlcYQo1IzKQP7oOz7oAPerVOtPz5h0fYDXR1VKHqMGCHp/eA3Am9EvFH0v7eC9l5pk9ltEaA3Tq7TAPyC4Qz5TiBwBFm8EqhOoc5sv58EPpy7vQxwaub6UCAv8h8Zxdrh6kFHY8YYkdk+ulOtH1YUI6fcauwm6SLUi1UScS+wSZGh21TQrtR/htnV9vw+HaC9DXB+kX6kU61/2fgrIWHsYcj3tXKr8b40XdaX53RJh2ZnkqR9gPFs+ffu29UIjkyXZgZoaWDnOMLpkJ7VLthnL3wp0lXA/LhipNgcuKEgbVfRGzv6BLBnu1J7epi6um3s89bUgGQ9/53MhJ8UihSsGbzfeImuYjTUcUSnWn90mLI71fqBwIHjpWlXanOAOcOUF8v8e7nVuC8qq0Pb8YqT6zUAXxhmlZdk20cTlLhZ7AhMuB0+QdlXR6e6rDJ8R9vvJRC8o3JZbqZ4V6kQMQzGoWO3hn1op1r/SlGeUjPZM3pKT+uKquEbvAPYtl2t3Tdk9UOhU61fXW413mf7QuRpvQBN7CbpjHIr2Tea5WdxWAzTsU/XNCJ8n+eUW42/tCu165bMVPC7Uiu5QSirwNul1EpW6FTqjxQMwHLGu0KffH9eFFfC8OFNBS/uBn0Jjb6z3GqUs/nS1DBmtZftuZJWzaQfYwbcr2fpbn1+rVOtD8WZdPNmJrAze9BF9WU9O2Nfh64nsyWeJRjZPuwQxqvrm/IAcOFk+vJcUWomS0djwxWCnZKXAp6JHUgVvstMstj/BS6dRPrZse9Z0W+jhdTFQ4HtyOygAF8E7iTa40TMB/YZxl4lhe0PSswgs+hI+li7Uj+5KH251Xib7bMkTet+RwakX9uudKrDLcCTRbtSa5SayYcwZ+TEn70Jiu9PZNN3KnWXW8n+oJcCO8c2IjEdOKfUSl7T721szkRs2pswngG8FyjS6L4L8+I+JY3oY5tF4eT/Rm8yZidnr6AC24euaGD7Zfkyx4gd4c+krVb7tnbH2qVkO5a3N5kUhyKE5UIxqdRKlrD9pm43QluuLpK3FxbKQd7fFKjabIpYB7NKP8HPdDDDyU0SN01mYkYu5Qaglrn9moXRZ0mP2j6QfhuTV8V/WXwhmsNPpuxtoO8bmd2u1E4elN72cZKmp4tuzHcT+B2dav2x4WuePDrV+pnRgrzLOcU2f7zUTH6RNecHaFfqz5aayfuAqyRtlvkGSoi9834EFwJPZu6gAUZKUrifUTTd3Kn0K4yMV+vjHvqfkd1mTrdr7f6JPcbmAgYH0+1VcE+nWh96a68vf4/1GzxhnCOGqSn0kOgq6XJ6mDieqyCmdxVgody7Jt2XIVBqJsuUmsnRNnNA1zhsiW6RVQZnxyAVBSejhM5hKmx7/j0uY3upKZQzBpJ+CHxvnCS3M9Yidxi8OrfgXDwoYamVvFjSlqFB3XZdC1TaleeXmKRoV2on2j42vc4skscWpY87QbuA56Tff2i+3j0tV/CTwIXdSR4MMjYqtxqv7RuEZvJq0GY5y9AxHIHQMv3fXXZrI/yX3U5LFZ3pkz4r2J6yeIxSMrvbEjE1TXgm4lUc0EKkvhRdTmuKLlE9hqqPGr0ow/GlQ/a3KVUwDsqtxlsk3S7pKEkrdftPv06nK0Jm2tynvJ4cpuI/VaSEnjHpUgbj48AjA57tK2n+ZAqDnp1TZqNiYBlCK5DutvY2Fk9oV2pP8E9E3P49tSclgGGNUjMpDUj/sM0p2Xlne8OCAEs+0+aDWVHG9j6E7bZ0gD4Q76e3/kExpX8qjGyfzmEr24/mTdezXEmWa8kZAkGQqftfSvzoM0ZaU5qAY/UhwxIKT23FTvUn/Vl7Oym94XnpVPozCKVmsr7tayQtnVtJnwBdbPwT4PcEjmI+5rHIlMyGnifqFPo8c7IZgCJuZGixaQgsQ7/OJIuXT6agFNFNICsyVoBvDUg+F5hnPDPDiZ9abjW2yPuSPd+w/R2CTU6W+x6oJ5N0Z86SevkxBKVdqd9QbiV3gV6bobB7lVrJZzqV+oJSMxHR+SszABcV7UDYfiDzOy3rkU61fttCHoh+P5Ria8uJy4lcUWp8NEjR6rzIg6a2Yhfrae4nVcn1Jvoaky16EMrBp+Qcm6Wz9yWOM3wxcqkD8jZmTEb5XIDVp5Anb+I/L279PmdEC9kzKSZaAKfZfr2kRydZ7rWIN2beX63UTHbqVOuX5NO2K7X55VbjYqH3xbxIejVwRamZbP18KWTziD5DjfQ6tv0ZaaAtEV3bnZ6o9sS04oSc0TOPN7ZXU6CySGzm4HKeph5je9KF+HW2gbGRk/HjGBp9kbueQ1CG7oTR4BU4Gv4V+AQNhyLbkxTtSu1pSb/PihUS2y68kdJmoA2y3JHtY9qV+pGdSn3gRC01kxnAGsME4R4Hb3Uu/scQyEcMu3uS+cfDQcCW4zx/BfDVKZR7eli4nfX1uqDcamxWlNj4CNt/y4Z/tL0u4tJgwf38otRK3iRptqRVc9/0rGjwOQblVmMG4oCsj5zxncUvV5yXauN7H0/qIaz3939M+jNjbQXSGn6CeBr6OJT9ipzVngtSRWGv+VMrPus9pAm4jikqJeOwOHfl/PNm6ngYFb6vKjWThUJUnMbG6BmTPEuMzTHu2ASfoJldRfnUYuG+jH4z+Yna+lrgtbnbNy2kcVgDxkSE/xnBajyLvW3vMJmyO9X6bxHn5LjXNPrZBmPSV+p/krQDDpx1ZE/BvNVwcbnVWCin+hWh3Eo2wlxjB5uizDEwfwU+WZynsaTx2ULrde2xQtSAiwoJSqdSf5Bg/pudVNuXW8l04527IkH4d84gq9dOtf44psvmxbLWt33Awh2Wnk1I10J0iujF5xxOL5I9h2f4Sui2N7or5J9/t7sL1iOOXy21kqWHriOi3Gr0KdWknggROaUnh9madAgZUNSNyeLwSaQt8hyejB3LoL6kok5+PA8j7Ork/VlOLzJXGL8SPmZ8G5DVHy4LNEutZK188naldqPEzsDTucVsK9sXlprJQg8oX2olW4Ouie3Kbmw8AFSKzjeKpvk/wLwvo2JA6BGb0wayn7bPzNl1LG9zkNDL08kW/509XqMlfTGTNh2ok8qtxuaT6Pi6pWZyfNTfDGpv5iU8NwYoPTd2PHQ5rudUV7Fys1Ot/xxzXY5YrUNgm4faMi01k6VLreQs23eVmsmamd49kiOAy5VbjdUnKGs3Sdvlt4yn2Peq7fdPODKBK/hg7vYDPEcr2YgiUecMSTdI+jPwn7lnqxCO/xwanWr9CQU3gXtzmw8rCs2OR432oV2pzwbeDe4t0CHrToizx/v+J4tSK9lR6FIC55Td0ZwDbN6u1IqCYy8FXA7eKSvqxH4d0qnWHx5IUCSuUH9QG4DDU+/UiOvaldq40cbaldovgDNyk2em7Va51Ti8yBkpRbnVWL7UTI4X+qWkI4A9xqsrY94/pUHuNywC2y8ZmI5sWITJGXn1tuXT1o6tR9LHMfNTkVMSgh2Am0rNZJtBZZdbjWmlZlKTdIfQPgS7ne5ksH1ngWPiFwaXl2wu8Z1oQtDjTAOxW25KAw1n2H7foIe2a4QgTHkcL2kiV4pxCa7tf2OsqDMX+I/M9deAfJCmPcZrcxHalfpDtrcmujhkRNtXEkIGrDQ2T20WaF9IOcj03WtP4JQpjncfyq3G7pgfEIlJakcl6V7jtw0Ijr2cpKuBbbKW77Gdn+5U6+fABEt5uZUcDzoifz8T1WvvTqU+4Ult5VbjJcANDvFOuogT637gAkk/Nf4LZgawFmEF2VXSUhlblQdtr5Nn0cutxqPESGpxghSGHZgIpWbyB2CNzLbZM7ZnS5pn+0udav2GmK6M+GNPdAFg33Zl4vAFMf+vgKxj3QJCiL8nEad2KvWrY7qDJH0j61uU2Yr8DXCF8V2YRyStZHsDSTsRPti+7XbbG3eq9Rtj+IQHbS+TM7e+RNKxtm+O6pG1gQMIdhpLxAXpVsEGqTBmu9duODPvBW37WsYPptQEziWYu08nOOTtSbGi9CZg07ylrYsjxP0ceBC4XNJptt8A/Ff8RjZmrHHkPpLOyZX75lhndtE1cGMs+3RJQ4lfpWbyOuDHwIo5M4ibbW9TJHKWmslHga8X+Hx9vl2pTSoAWhblVmNP4Fw7+O90eyVux2zXqdbvK8izEvhymw37bbCMzSc61frX0rQTadzPTDuT1pwxOHtCqMEQaFdqTxq/MzVh7u1yGGBVxCeACzE/kZgt6TRJewBLZUUL2zNS7+bcy2fKEn0Gkv6cm2RLSnoHsIvUH2wpZf3THZ/JiFmS7st6eQLTJLaRtIsyMVY71fqpxoeHtnTzpu9jPfDhCu/oItunAQeZnht+Jv2pkn4Z38W86HTXx2lJ2sn2TQQZ/u+IuyR9EmJcFTMLc1n8DNK804BtgF1QiFk6AVr02whVgfOAXxIUov+PYmIyhxAGssj+pMhWY2NgF3o7RGvE6y0ZS0yuJRC1/Du6mbFijjJlbzjs++5U63dK2g54vN+Gx28GLo6iRD7PyZKO6r2fLkf82XKrMWGcoiKUmsmBts+zPS1yPalB6W2YrQcQk9WA2YGYqKcwhgWg/bPEBCYgKDGO6/U9a8k+JeGF7UptaHuPTqX+gO23SWRWgr6YHeFnz5iuT1a3fSWwQbtSG+NCnlLNKVpvZnFG31UvbEKuvn7r0Sns+JyRb6+hTwzKjNuXgF0kHuyJWD2RKV0tum1wr0RJf7P9gU61fnC7UusazEk6SdKpOUvnlMVeApjeJx/jawkBtn9fNMST6P8jBLFtMrYVtwGbRd1GEb5LiCU7FTxFODFv0IfzGQL39JzRrtR+idiVvjgkArGlxPlFStd2pXaM7ZOyZgrxXX2p1Ez2n0z95VbySYlTGav6ugmzRZG9S6mZlGxfZ3vdrt1VyDzf9l7tSu2MfJ5hbAJOT3/kJtakne861fqT7Up9H8LKcYnt3orTk8eyE20BcHlkC7cbdJSDzdO5j3rS5tIQDpC2fbjtJ7pKJ/Wx97E+z49/s9mH/qjbldosxMHAI30KTnX7nB+3H4JeQ4jJcV86Tv1j0Kf4m2M42vZanWr9vIL63a7UDgbejfhjTx52ZpcLHAIhHyX0zk61/iRBNE0A5zg5xFAm6jMk3QhsAJzP+GzlQwS9xkaS2oMSSboT2I3iYE4Lcn+z+CPh9IA/jFP2PEK4hJ8UPJ70N9ap1K8B3mv8bFfhHrjbnTRY6fop47MKiPa3S83kXcPUW241Pgv6Sp6Ltn3NOCLXWpJuANZMdyNjG/4B1DvV+v8UjtkQjZlm/KqsNbrQMwvDLLjUTF4KbCVpfYLcv5TtJ6My+DZgdrtSm9D/o9xqrJx1GJP016Kgv8Oi3Eqm26wK2YPQ9ZdsbJVSM1ld4TycdHW/r12pTcokvNxqLAmsSowul+qUio4N6Xsf9pslbWJ7LcTy0WLlEYLR18/Bv2xXhvNOLrWSaZgto+foqwhKzbmR5f9hu1J7pCDPS4AVReQog/T6QKda/3s2XYEOZZakXTPPS8C2BDFvZUKM2T8RIt3PnowfTdwKXpV+P5+/SXrCIRZtVhR8dArWr0sTXCDS4EMPKESlmzRKzWQvSefFcrv3JZ3SrtQ+mk8fIyNeiNg9S4Ilzbe9c6dav3JgXa3kBNyncE6/sysk1QdG2hezcdD5pO1MCWy7UhsYHHuhGpiNMEIWExGUf2WUW42P2u5TugJIOrZdqeW3rdOTAC8FV7NW2sbzhKrtSu2GXPkCTgEflCH6sQ4utnlPpzowOPYVwAp9Sn38uNA725XauMGxR2cbjzDCIkC7UjsZcVSB5/aR5VbjE/n0cfLvCrmDzMxM8OWlZrJBeqvUTJYwPh04KPU7yxhTfs+mPoCYbGV8NbBCVho1novZciJiAiOCMsIIiwydSv0Y4Gt53yjjk8qtZJ98+iCeeFtJv0lTRv1GaoG7NoDEtzEfzJobRIXut6OS/tl82aVmsh1wmUitZsN9SXOi0jZvl1OIEUEZYYRFi0OAc3JHsgA6o9xq7JpPHIIuuWL73iwVkrQiZnapmXwYtF/vUXeT46u2DywiJuVWoyYxy/bMrJgj6Q+2t+xUxx5XOggjHcoIzxtGOpThEI+raQC75MSf+ZK2LVKClprJqyT91PZq3Z3IrG9Nv27m+E61/pkBdb8fODv1As8YrP1OUmWymy8jDmWEERYxoo3Qu8HXQM/eRCHO7KxSMxkTmDuYULgCzM1yBVlCEonJyYOISamZHGh6kfYhdXblNwR/nknv5I4IyggjvADQrtSettlF0k05p9CXSLosHvmby1O/C7GtHcJkplxKTidzUlF9pWZyhKRT8yFPhW6StPlUAzuNCMoIzyfyhmvPW+T+/wvoVOtP2N4Bcwf0uUa8TOLKcqsxJnJfp1K/GdgJmJdasmZ87ZA0JuxmqZkcJ+n47L3o/HmN7W0Gneg5DMbVoUSDoBOBtxMMeu4CDlHm8OzFBbb/m+CQ9ylJv36u5b1Q4HBWb0fSlxZ1Wwra9kpCUKUUD0h6YKrl/asghjb4MQoR8jInMdxjvGGnUmjZugNwkcT0nN/XRZLe3a7UnomGlF8mOHwCfUd9XCLx3nalPmWDUJiYQ/kKsDvwQ4IJ/loMEd3rBYom4UyXbZ5rQS8wzCNYmL7gEJ0tb838GxGTIdCp1u+T9A4Rz37uBf1aC7PjgDyXAR+wWZAL47gb+HelZvJd8O22P56KVBlXmguD1exzIyYwMUFZH7hS4aiFrxOIya9sv9T25rb74l3a3jh7z/Y2tv/D9rsGxRKNeV6Su/dK22vH39Ns72r7CNsb5PKlaarRB+cNuXKmxboPBX5LmHzZ52+N5e7l/uNOs2leZ3vD+Pv1sT/bZ55vUFDvyrbXi783jKEMsb2D7U/ZXiVevza2e/MBdS8Vx3ll26vFvO9Jx9L2KwjE/tsx7WbOHIxuu5y2Y4TFC+1K7R7bVUmPpZ7B0UJ20JEfdKr18yUdlNqnZBxuXy1pD5t1Uh+1zN+zgT0mdWTvOJhI5DmTsO13iMKhSOn9fQhBaq6XVM/cn0MQKc6PrHiNELfjtcDvJVUK6rgb+GMME0AkSL8HriOcz3sZIVjw3QSR5SRJx9m+g8BOp7FF7gfWBA6QdIHtmcCPCK7rfwRKsb9fknRSdOE/ELiVwHn9DdikIN5GA9iecCzmWwi+JmsB50r6mO3rCMdjbpiGZ7B9JPAOSZvb/mVs188I8T4eBlYEzgH2B9pxfD4v6b9zdW8Y+/8oIZZHO/bnHkJs1sOATwFnEY4xuZwglm4BbEXYivx5dJ0fYTFEudXYyOF4i5LEuTYHTHSKZKmVHAUcnQ0lmXO6Te99w/ZHO9UxZxg/P7C9tO3v237C9mzb22aefd32Jbn0f3I4cBrb/2X7Q/H32rafSjmKXJ63237c9lrx+mjbd9iW7XNt/yx1/LP9IdsP2n5xXH2fic+Xic8vioOP7S/bvtv2y+P1x2wvsH1IvP64Y5xU2yvY/psHBCO2/Vvbf7b9+nj9Bdu/yjx/OMtl2P6c7dnx9/Jx/G6OhkPTYv/+avttMc2Ztq8eUPfnbP8jM66r2W7bPiZen2/765lnc+IY3pqOxQiLPyYb/rHUTA4otxqPl1uJy62Gy62GS63EpWbicit5stRMDno+2jmuyCPpKUnvIniEzgPOt/2RIcs+BXiN7YsIK+g0+g+9Tuv4MUEcOSTeqgI/ijEq1iMEEr4gEq9dgRXoBSGaBnxMUnrK2p+JkdsI4tqPpCiHwslA1lX9dGBF2wlwCYF7GUPwIhYA50m6I17/mn5l4zDjfLSkeZIWEIICXS3pZ/H5HzLtLsKdks6P4zWHEP1rjCgTn50Qx/JFwIcn0cYRXsCYLBfRqdZPA14JOsj4u8ZXYr6HONim1KnWT30+2jlUJO0YF2EH2xcS4rqOOQXN9gxiFPH4+zqCGHINQeT4xjhVXA3UbW8EvJ4QBhCCK/p9BHEjRYvA+i9LiM0w6JyWJcgoKxUO3s6eO/Mjwuba5QTR4AQGi4DpDlffsIzTn/zhVM8QRJ4UTwN/GWbsM+mz+DuBsBbhGXoLxWib9l8Ycfv3m/HfPwXjcii2D4sxMlI8TC8exNNAVpl6BL0jM99EiD+xq6TjYp7xDiw6kTAJTyXI/O14/27CxP1qjDJ2EtCQNMwZufcRAvmkfXkDQZdBFIPeCHxQ0rEEwjfesZNi/ABKTwCvjmXPhDEHc5mxx2c+y/BYxyG4crqVvwGBG+uvJPTrswRu7Jk4niOM8E/DRLs82wE3OsSh/B/gPfROkv8J8Gbb37F9PiGg8Z+A/Qgs/BPAhba/BhxHCAD0H0WVxGA31wFvAGZlHh0NvA643vaptmcRgl0PipS/AFjL9l6EyOXr2L4sKogvJqzsu8d09wLftH0iQSR7GNjd9jDnCM8Hlo2KXQhK0k/a/ibwC4K4Ufbw5w89C6xq++PjPJ8Vx7JFEB1PyDzf2PbbgdMI3OBngUOBnW3vaPsdtm9JdU0jjPB8YSKCUiEcfDSd8FF/LDWgknQx4cM1gXikae8GHifEDv0LgfP4d+BzBFFlEE4kiFLdkJOSbgXeBtxM4H46wDvjUQqPAt+h3wbj28BVhLidvwJ2JpzlsgJwDOEktNsJBGGX2NZVgSMJxO52isWEi4CsMdxlsZ1pTN0PEESa5Qi7N28jbOf+b2zfhbl2Xg1cn7k+A/gBYw+YSnE3IWDySvH3VpLSkIenEaK8v4gQjf3fJVnSVcCxBNub+2KaKYXGHGGEEf6PIO7y3Lio2zHCCMNg5MvzwscCRmEmRlhM8P8BITaSXf8ePQ0AAAAASUVORK5CYII=" />
+        </svg>
+      </div>
+      <button id="hamburger" class="flex lg:hidden justify-center items-center w-8 h-8">
+        <img src="./assets/images/hamburger.png" class="menu filter invert" alt="">
+        <img src="./assets/images/close.png" class="close w-6 h-6 filter invert" alt="">
+      </button>
+      <div class="hidden lg:flex items-center">
+        <ul class="flex m-0 p-0 text-white text-xs mr-4">
+          <li class="px-4 uppercase"><a href="#">O que é?</a></li>
+          <li class="px-4 uppercase"><a href="#">como funciona?</a></li>
+          <li class="px-4 uppercase"><a href="#">benefícios</a></li>
+          <li class="px-4 uppercase"><a href="#">como contratar</a></li>
+        </ul>
+        <button class="border rounded-full w-48 h-9 border-theme-yellow text-xs font-bold text-theme-yellow">
+          Acessar a plataforma
+        </button>
+      </div>
+      <div class="mobile-menu flex-col items-center absolute w-full top-full bg-black left-0 py-5">
+        <ul class="w-full flex flex-col m-0 p-0 text-white text-theme-10">
+          <li class="h-9 px-4 uppercase text-center"><a href="#">O que é?</a></li>
+          <li class="h-9 px-4 uppercase text-center"><a href="#">como funciona?</a></li>
+          <li class="h-9 px-4 uppercase text-center"><a href="#">benefícios</a></li>
+          <li class="h-9 px-4 uppercase text-center"><a href="#">como contratar</a></li>
+        </ul>
+        <button class="border rounded-full w-48 h-9 border-theme-yellow text-theme-10 text-theme-yellow">
+          Acessar a plataforma
+        </button>
+      </div>
+    </div>
+  </header> <!-- header -->
+
+  <div class="w-full relative overflow-hidden">
+    <img src="./assets/images/banner.png" class="object-cover h-184"
+      alt=":( Not found the banner.png into assets/images folder" />
+    <img src="./assets/images/graphic1.png" class="absolute top-0 left-6 hidden xl:flex"
+      alt=":( Not found the graphic1.png into assets/images folder" />
+    <img src="./assets/images/graphic.png" class="absolute bottom-0 right-56 hidden xl:flex"
+      alt=":( Not found the graphic.png into assets/images folder" />
+    <div class="absolute sm:top-1/2 top-2/3 left-1/2 sm:left-1/3 transform -translate-x-1/2 flex flex-col items-center">
+      <span class="text-theme-yellow font-semibold text-3xl">Taxa de</span>
+      <span class="text-white font-bold text-8xl">0,99%</span>
+    </div>
+    <img src="./assets/images/bullets.png" class="absolute top-40 left-1/2 transform -translate-x-40"
+      alt=":( Not found the bullets.png into assets/images folder" />
+  </div> <!-- .banner -->
+
+  <div class="w-full flex justify-center">
+    <div class="w-full max-w-5xl flex justify-center items-end md:py-16 md:px-20 px-4 py-10">
+      <img src="./assets/images/benefit_arrow.png" class="mr-4 md:mr-10 hidden sm:flex"
+        alt=":( Not found the benefit_arrow.png into assets/images folder">
+      <div class="flex md:flex-row flex-col items-center md:items-end">
+        <p class="text-theme-75 text-theme-gray leading-none font-bold mb-3 md:mb-0">
+          <span>O</span>
+          <span class="inline md:block -mt-7">que</span>
+          <span>é?</span>
+        </p>
+        <p class="text-lg text-center sm:text-left">
+          Verifica Pix é uma plataforma de cobrança para vendas
+          que usa o meio de pagamento instantâneo <b>PIX</b> de forma
+          segura, simples e com a menor taxa do mercado.
+        </p>
+      </div>
+    </div>
+  </div> <!-- .what_is -->
+
+  <div class="flex bg-theme-gray">
+    <div>
+      <img src="./assets/images/pix.png" alt=":( Not found the pix.png into assets/images folder" />
+    </div>
+    <div>
+      <img src="./assets/images/pix.png" alt=":( Not found the pix.png into assets/images folder" />
+    </div>
+    <div class="hidden md:flex">
+      <img src="./assets/images/pix.png" alt=":( Not found the pix.png into assets/images folder" />
+    </div>
+  </div> <!-- .pix -->
+
+  <div class="w-full bg-theme-green flex justify-center relative overflow-hidden px-4">
+    <img src="./assets/images/graphic2.png"
+      class="absolute hidden xl:flex bottom-0 left-0 transform translate-y-1/2 z-10"
+      alt=":( Not found the graphic2.png into assets/images folder." />
+    <div class="w-full max-w-5xl pt-16 pb-20 relative z-20">
+      <div class="flex flex-col lg:flex-row items-center lg:items-end mt-1 mb-10 lg:mb-20">
+        <p class="text-theme-yellow text-theme-75 font-bold leading-none text-center lg:text-left">
+          Como<br class="hidden lg:flex" /> funciona?
+        </p>
+        <p class="text-white leading-normal text-lg font-light text-center lg:text-left">
+          Temos 2 cenários, o da venda física quando o cliente está<br class="hidden lg:flex" />
+          no estabelecimento e da venda digital quando ele está distante.<br class="hidden lg:flex" />
+          Em ambos, o meio de cobrança é seguro e ágil. Veja:
+        </p>
+      </div>
+      <div class="flex justify-center mb-10">
+        <div class="relative w-40 md:w-80 mx-1 md:mx-10 tab_item" data-target="#process_one">
+          <img src="./assets/images/box_active.png" class="active"
+            alt=":( Not found the box_active.png into assets/images folder" />
+          <img src="./assets/images/box.png" class="normal hidden"
+            alt=":( Not found the box_active.png into assets/images folder" />
+          <div
+            class="w-full h-32 md:h-60 absolute top-0 flex flex-col justify-center cursor-pointer items-center left-1/2 transform -translate-x-1/2">
+            <img src="./assets/images/building.png" class="mb-2 md:mb-5 w-10 md:w-16"
+              alt=":( Not found the building.png into assets/images folder" />
+            <p class="text-xs md:text-lg font-medium text-theme-gray leading-none">Quando o cliente está</p>
+            <p class="text-xs md:text-lg font-bold leading-none text-white">NO ESTABELECIMENTO</p>
+          </div>
+        </div>
+        <div class="relative w-40 md:w-80 mx-1 md:mx-10 tab_item" data-target="#process_two">
+          <img src="./assets/images/box_active.png" class="active hidden"
+            alt=":( Not found the box_active.png into assets/images folder" />
+          <img src="./assets/images/box.png" class="normal"
+            alt=":( Not found the box_active.png into assets/images folder" />
+          <div
+            class="w-full h-32 md:h-60 absolute top-0 flex flex-col justify-center cursor-pointer items-center left-1/2 transform -translate-x-1/2">
+            <img src="./assets/images/house.png" class="mb-2 md:mb-5 w-10 md:w-16"
+              alt=":( Not found the house.png into assets/images folder" />
+            <p class="text-xs md:text-lg font-medium text-theme-gray leading-none">Quando o cliente está</p>
+            <p class="text-xs md:text-lg font-bold text-white leading-none">EM CASA</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div id="process_one" class="tab_content">
+          <img src="./assets/images/process1.png" class="hidden md:flex" alt="">
+          <div class="flex flex-col md:hidden w-full">
+            <div class="flex mb-4 w-full">
+              <div class="mr-5 text-theme-yellow font-bold text-3xl">1.</div>
+              <div>
+                <img class="w-full" src="./assets/images/step_1_1.png" alt="">
+              </div>
+            </div>
+            <div class="flex mb-4 w-full">
+              <div class="mr-5 text-theme-yellow font-bold text-3xl">2.</div>
+              <div>
+                <img class="w-full" src="./assets/images/step_1_2.png" alt="">
+              </div>
+            </div>
+            <div class="flex mb-4 w-full">
+              <div class="mr-5 text-theme-yellow font-bold text-3xl">3.</div>
+              <div>
+                <img class="w-full" src="./assets/images/step_1_3.png" alt="">
+              </div>
+            </div>
+            <div class="flex mb-4 w-full">
+              <div class="mr-5 text-theme-yellow font-bold text-3xl">4.</div>
+              <div>
+                <img class="w-full" src="./assets/images/step_1_4.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="process_two" class="tab_content hidden">
+          <img class="hidden md:flex" src="./assets/images/process2.png" alt="">
+          <div class="flex flex-col md:hidden w-full">
+            <div class="flex mb-4 w-full">
+              <div class="mr-5 text-theme-yellow font-bold text-3xl">1.</div>
+              <div>
+                <img class="w-full" src="./assets/images/step_2_1.png" alt="">
+              </div>
+            </div>
+            <div class="flex mb-4 w-full">
+              <div class="mr-5 text-theme-yellow font-bold text-3xl">2.</div>
+              <div>
+                <img class="w-full" src="./assets/images/step_2_2.png" alt="">
+              </div>
+            </div>
+            <div class="flex mb-4 w-full">
+              <div class="mr-5 text-theme-yellow font-bold text-3xl">3.</div>
+              <div>
+                <img class="w-full" src="./assets/images/step_2_3.png" alt="">
+              </div>
+            </div>
+            <div class="flex mb-4 w-full">
+              <div class="mr-5 text-theme-yellow font-bold text-3xl">4.</div>
+              <div>
+                <img class="w-full" src="./assets/images/step_2_4.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- how does it work -->
+
+  <div class="py-20 flex flex-col items-center bg-white px-4">
+    <div class="w-full max-w-5xl">
+      <div class="mb-10">
+        <p class="flex items-center text-2xl md:text-3xl font-semibold text-theme-darkgray mb-5">
+          Verifica Pix <img class="mx-3 w-8 md:w-12" src="./assets/images/star.png" alt="" /> cartões
+          <span></span>
+        </p>
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="border-b">
+                <th></th>
+                <th>
+                  <div class="flex items-center justify-center h-11 bg-theme-green text-white text-lg rounded-tr-2xl">
+                    Verifica Pix
+                  </div>
+                </th>
+                <th class="text-theme-darkgray text-lg">Crédito</th>
+                <th class="text-theme-darkgray text-lg">Crédito antecipado</th>
+                <th class="text-theme-darkgray text-lg">Débito</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="h-8 font-semibold text-theme-darkgray text-lg">Taxa</td>
+                <td class="text-center h-8 font-bold italic text-theme-green text-xl bg-theme-lightgreen">0,99%</td>
+                <td class="text-center h-8 font-semibold text-theme-darkgray text-lg">4%</td>
+                <td class="text-center h-8 font-semibold text-theme-darkgray text-lg">8%</td>
+                <td class="text-center h-8 font-semibold text-theme-darkgray text-lg">1,9%</td>
+              </tr>
+              <tr class="border-b">
+                <td class="h-8 font-semibold text-theme-darkgray text-lg">Recebimento</td>
+                <td class="text-center h-8 font-bold italic text-theme-green text-xl bg-theme-lightgreen">Imediato</td>
+                <td class="text-center h-8 font-semibold text-theme-darkgray text-lg">D+30</td>
+                <td class="text-center h-8 font-semibold text-theme-darkgray text-lg">D+1</td>
+                <td class="text-center h-8 font-semibold text-theme-darkgray text-lg">D+1</td>
+              </tr>
+              <tr class="border-b">
+                <td class="h-8 font-semibold text-theme-darkgray text-lg">Pagamento</td>
+                <td class="text-center h-8 font-bold italic text-theme-green text-xl bg-theme-lightgreen">Celular</td>
+                <td class="text-center h-8 font-semibold text-theme-darkgray text-lg">Maquininha</td>
+                <td class="text-center h-8 font-semibold text-theme-darkgray text-lg">Maquininha</td>
+                <td class="text-center h-8 font-semibold text-theme-darkgray text-lg">Maquininha</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <p class="flex items-center text-2xl md:text-3xl font-semibold text-theme-darkgray mb-5">
+          Verifica Pix <img class="mx-3 w-8 md:w-12" src="./assets/images/star.png" alt="" /> bancos
+        </p>
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="border-b">
+                <th></th>
+                <th>
+                  <div class="flex items-center justify-center h-11 bg-theme-green text-white text-lg rounded-tr-2xl">
+                    Verifica Pix
+                  </div>
+                </th>
+                <th class="text-theme-darkgray text-lg">Pix dos bancos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="h-8 font-semibold text-theme-darkgray text-lg">Taxa</td>
+                <td class="text-center h-8 font-bold italic text-theme-green text-xl bg-theme-lightgreen">0,99%</td>
+                <td class="text-center h-8 font-semibold text-theme-darkgray text-lg">1,45%</td>
+              </tr>
+              <tr class="border-b">
+                <td class="h-8 font-semibold text-theme-darkgray text-lg">Recebimento</td>
+                <td class="text-center h-8 font-bold italic text-theme-green text-xl bg-theme-lightgreen">Imediato</td>
+                <td class="text-center h-8 font-semibold text-theme-darkgray text-lg">Imediato</td>
+              </tr>
+              <tr class="border-b">
+                <td class="h-8 font-semibold text-theme-darkgray text-lg">Geração de QR Code</td>
+                <td class="text-center h-8 font-bold italic text-theme-green text-xl bg-theme-lightgreen">
+                  App celular/computador
+                </td>
+                <td class="text-center h-8 font-semibold text-theme-darkgray text-lg">Portal banco</td>
+              </tr>
+              <tr class="border-b">
+                <td class="h-8 font-semibold text-theme-darkgray text-lg">Pagamento</td>
+                <td class="text-center h-8 font-bold italic text-theme-green text-xl bg-theme-lightgreen">App celular
+                </td>
+                <td class="text-center h-8 font-semibold text-theme-darkgray text-lg">Portal banco</td>
+              </tr>
+              <tr class="border-b">
+                <td class="h-8 font-semibold text-theme-darkgray text-lg">Verificação do pagamento</td>
+                <td class="text-center h-8 font-bold italic text-theme-green text-xl bg-theme-lightgreen">Imediata</td>
+                <td class="text-center h-8 font-semibold text-theme-darkgray text-lg">Após acessar portal</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .table -->
+
+  <div class="w-full bg-theme-yellow relative pt-16 pb-8 flex justify-center">
+    <img src="./assets/images/benefit_assets.png" class="hidden xl:flex absolute top-0 left-10 z-10"
+      alt=":( Not found the benefit_assets.png into assets/images folder">
+    <div class="w-full max-w-5xl flex flex-col items-center relative z-20">
+      <div class="font-bold text-white text-theme-68 text-center leading-none mt-1 mb-8">
+        Quais são os<br /> benefícios?
+      </div>
+      <div class="flex flex-wrap">
+        <div class="w-full md:w-1/2 flex flex-col items-center px-4 md:px-10 mb-14">
+          <img src="./assets/images/benefit_check.png" class="mb-6"
+            alt=":( Not found the benefit_check.png into assets/images folder" />
+          <p class="text-theme-34 font-bold text-theme-darkgray leading-none text-center">Menor taxa do mercado: 0,99%
+          </p>
+          <p class="text-base text-theme-darkgray leading-5 text-center">
+            com o valor depositado na conta do cliente em<br />
+            tempo real. Mais economia com taxas, chegando<br />
+            a até 100%* com a possibilidade de<br />
+            reinvestimento no negócio ou aplicação<br />
+            de descontos para ampliar as vendas.<br />
+            <small class="text-xs">*Comparada com taxas dos padrões de mercado de cartão de crédito.</small>
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 flex flex-col items-center px-4 md:px-10 mb-14">
+          <img src="./assets/images/benefit_check.png" class="mb-6"
+            alt=":( Not found the benefit_check.png into assets/images folder" />
+          <p class="text-theme-34 font-bold text-theme-darkgray leading-none text-center">
+            Crédito imediato<br /> na conta da empresa
+          </p>
+          <p class="text-base text-theme-darkgray leading-5 text-center">
+            melhorando o fluxo de caixa<br />
+            e possibilitando ao empresário<br />
+            negociar melhor a reposição<br />
+            de estoque com pagamentos à vista.
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 flex flex-col items-center px-4 md:px-10 mb-14">
+          <img src="./assets/images/benefit_check.png" class="mb-6"
+            alt=":( Not found the benefit_check.png into assets/images folder" />
+          <p class="text-theme-34 font-bold text-theme-darkgray leading-none text-center">
+            Conta<br /> corrente online
+          </p>
+          <p class="text-base text-theme-darkgray leading-5 text-center">
+            onde é possível verificar saldo, extrato<br />
+            de operações, efetuar pagamento<br />
+            de boletos e fazer transferências, tudo<br />
+            sem pagar taxas* ou anuidades.<br />
+            <small class="text-xs">*Primeiras 4 transferências gratuitas; as demais, R$ 2,00 por transferência.</small>
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 flex flex-col items-center px-4 md:px-10 mb-14">
+          <img src="./assets/images/benefit_check.png" class="mb-6"
+            alt=":( Not found the benefit_check.png into assets/images folder" />
+          <p class="text-theme-34 font-bold text-theme-darkgray leading-none text-center">
+            Facilidade e<br /> autonomia para cobrar<br /> e verificar o pagamento<br /> em tempo real.
+          </p>
+          <p class="text-base text-theme-darkgray leading-5 text-center">
+            Tudo isso sem acessos a contas bancárias<br /> ou dependência de maquininhas de cartão.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .benefits -->
+
+  <div class="w-full bg-white flex justify-center">
+    <div class="flex flex-col items-center pt-12 pb-12 md:pb-24 px-4">
+      <div class="w-full max-w-5xl flex flex-col md:flex-row items-center mb-5 md:mb-16">
+        <p
+          class="text-theme-gray font-bold text-theme-75 flex-shrink-0 leading-none mb-4 md:mb-0 text-center md:text-left">
+          Quer se<br class="hidden md:flex"> cadastrar?
+        </p>
+        <img src="./assets/images/benefit_arrow.png" class="hidden lg:flex mr-12"
+          alt=":( Not found the benefit_arrow.png into assets/image folder.">
+        <p class="text-theme-gray text-lg leading-6 text-center md:text-left">
+          Preencha o formulário de abertura de cadastro e aguarde o convite que mandaremos no seu email, para que você
+          finalize o seu cadastro e começe suas vendas!
+        </p>
+      </div>
+      <div class="w-full max-w-2xl flex flex-col">
+        <div class="flex flex-col mb-3">
+          <label class="text-xs font-bold text-gray-500 mb-2">Nome completo</label>
+          <input type="text" class="w-full h-9 bg-theme-lightgreen rounded px-2 outline-none text-xs">
+        </div>
+        <div class="flex flex-col mb-3">
+          <label class="text-xs font-bold text-gray-500 mb-2">E-mail</label>
+          <input type="text" class="w-full h-9 bg-theme-lightgreen rounded px-2 outline-none text-xs">
+        </div>
+        <div class="flex flex-col mb-3">
+          <label class="text-xs font-bold text-gray-500 mb-2">CELULAR</label>
+          <input type="text" class="w-full h-9 bg-theme-lightgreen rounded px-2 outline-none text-xs">
+        </div>
+        <div class="flex flex-col mb-3">
+          <label class="text-xs font-bold text-gray-500 mb-2">Nome Fantasia</label>
+          <input type="text" class="w-full h-9 bg-theme-lightgreen rounded px-2 outline-none text-xs">
+        </div>
+        <div class="flex flex-col mb-3">
+          <label class="text-xs font-bold text-gray-500 mb-2">RazÃo Social</label>
+          <input type="text" class="w-full h-9 bg-theme-lightgreen rounded px-2 outline-none text-xs">
+        </div>
+        <div class="flex flex-col mb-3">
+          <label class="text-xs font-bold text-gray-500 mb-2">CNPJ</label>
+          <input type="text" class="w-full h-9 bg-theme-lightgreen rounded px-2 outline-none text-xs">
+        </div>
+        <div class="flex flex-col mb-3">
+          <label class="text-xs font-bold text-gray-500 mb-2">Tipo estabelecimento (padaria, mercado, varejo geral de
+            rua, etC.)</label>
+          <input type="text" class="w-full h-9 bg-theme-lightgreen rounded px-2 outline-none text-xs">
+        </div>
+        <div class="flex flex-col mb-3">
+          <label class="text-xs font-bold text-gray-500 mb-2">Taxa atual do cartÃo de crÉdito mais usado</label>
+          <input type="text" class="w-full h-9 bg-theme-lightgreen rounded px-2 outline-none text-xs">
+        </div>
+        <div class="flex flex-col mb-3">
+          <label class="text-xs font-bold text-gray-500 mb-2">Taxa atual para adiantamento</label>
+          <input type="text" class="w-full h-9 bg-theme-lightgreen rounded px-2 outline-none text-xs">
+        </div>
+        <div class="flex flex-col mb-3">
+          <label class="text-xs font-bold text-gray-500 mb-2">NÚmero pontos de venda ou vendedores</label>
+          <input type="text" class="w-full h-9 bg-theme-lightgreen rounded px-2 outline-none text-xs">
+        </div>
+        <div class="flex flex-col mb-8">
+          <label class="text-xs font-bold text-gray-500 mb-2">Faturamento Mensal Aprox. com Cartão de crÉdito</label>
+          <input type="text" class="w-full h-9 bg-theme-lightgreen rounded px-2 outline-none text-xs">
+        </div>
+        <button class="h-9 rounded bg-theme-green text-white font-bold text-sm">ENVIAR</button>
+      </div>
+    </div>
+  </div> <!-- .register -->
+
+  <div class="w-full flex justify-center bg-theme-dark pt-16 px-4">
+    <div class="w-full max-w-2xl flex flex-col items-center px-0.5 mt-1">
+      <div class="flex flex-col md:flex-row items-center md:items-end px-5 mb-5 md:mb-20">
+        <p
+          class="text-theme-yellow font-bold text-theme-75 flex-shrink-0 mr-8 leading-none text-center md:text-left mb-3 md:mb-0">
+          Fale com<br class="hidden md:flex" /> a gente!
+        </p>
+        <p class="text-white text-lg font-light leading-normal text-center md:text-left">
+          Entre em contato para tirar suas dúvidas. teremos o prazer em ajudá-lo!
+        </p>
+      </div>
+      <div class="w-full">
+        <div class="flex flex-col mb-3">
+          <label class="text-xs text-white font-bold text-gray-200 uppercase mb-2">Nome</label>
+          <input type="text" class="h-9 bg-theme-lightdark rounded outline-none px-2 text-white" />
+        </div>
+        <div class="flex flex-col mb-3">
+          <label class="text-xs text-white font-bold text-gray-200 uppercase mb-2">E-mail</label>
+          <input type="email" class="h-9 bg-theme-lightdark rounded outline-none px-2 text-white" />
+        </div>
+        <div class="flex flex-col mb-3">
+          <label class="text-xs text-white font-bold text-gray-200 uppercase mb-2">CELULAR</label>
+          <input type="text" class="h-9 bg-theme-lightdark rounded outline-none px-2 text-white" />
+        </div>
+        <div class="flex flex-col mb-3">
+          <label class="text-xs text-white font-bold text-gray-200 uppercase mb-2">EMPRESA</label>
+          <input type="text" class="h-9 bg-theme-lightdark rounded outline-none px-2 text-white" />
+        </div>
+        <div class="flex flex-col mb-7">
+          <label class="text-xs text-white font-bold text-gray-200 uppercase mb-2">MENSAGEM</label>
+          <textarea class="h-40 bg-theme-lightdark rounded outline-none p-2 text-white"></textarea>
+        </div>
+        <button class="w-full h-9 mb-16 bg-theme-darkgreen text-white font-bold text-sm rounded">ENVIAR</button>
+      </div>
+      <div class="pt-2 pb-3">
+        <img src="./assets/images/logo_footer.png" class="mb-16"
+          alt=":( Not found the logo_footer.png into assets/images folder">
+      </div>
+    </div>
+  </div> <!-- .contact -->
+
+
+
+  <script>
+      for(var i = 0; i < document.querySelectorAll('.tab_item').length; i++) {
+        document.querySelectorAll('.tab_item')[i].addEventListener('mouseover', function() {
+          for(var i = 0; i < document.querySelectorAll('.tab_content').length; i++) {
+            document.querySelectorAll('.tab_content')[i].classList.add('hidden');
+          }
+          document.querySelector(this.getAttribute('data-target')).classList.remove('hidden');
+          for(var i = 0; i < document.querySelectorAll('.tab_item .active').length; i++) {
+            document.querySelectorAll('.tab_item .active')[i].classList.add('hidden');
+          }
+          for(var i = 0; i < document.querySelectorAll('.tab_item .normal').length; i++) {
+            document.querySelectorAll('.tab_item .normal')[i].classList.remove('hidden');
+          }
+          this.children[0].classList.remove('hidden');
+          this.children[1].classList.add('hidden');
+        });
+      }
+
+      document.querySelector('#hamburger').addEventListener('click', function() {
+        if(document.querySelector('header').classList.contains('open')) {
+          document.querySelector('header').classList.remove('open');
+        } else {
+          document.querySelector('header').classList.add('open');
+        }
+      })
+  </script>
+</body>
+
+</html>
